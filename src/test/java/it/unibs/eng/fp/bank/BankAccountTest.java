@@ -34,6 +34,14 @@ public class BankAccountTest {
 		assertAccount(account, OWNER, 500L);
 	}
 
+	@Test
+	public void tryToWithdrawToMuchMoney() throws Exception {
+		final BankAccount account = new BankAccount(OWNER, 1500L);
+		final Long result = account.withdraw(2000L);
+		assertEquals(Long.valueOf(1500L), result);
+		assertAccount(account, OWNER, 0L);
+	}
+
 	private void assertAccount(BankAccount account, String owner, Long balance) {
 		assertEquals(owner, account.getOwner());
 		assertEquals(balance, account.getBalance());

@@ -25,7 +25,12 @@ public class BankAccount {
 		balance += amount;
 	}
 
-	public void withdraw(Long amount) {
-		balance -= amount;
+	public Long withdraw(Long amount) {
+		Long result = amount;
+		if (result > balance) {
+			result = balance;
+		}
+		balance -= result;
+		return result;
 	}
 }
