@@ -9,6 +9,10 @@ public class BankAccount {
 		this.balance = balance;
 	}
 
+	public BankAccount(String owner) {
+		this(owner, 0L);
+	}
+
 	public String getOwner() {
 		return owner;
 	}
@@ -16,5 +20,4 @@ public class BankAccount {
 	public Long getBalance() {
 		return balance;
 	}
-
 }

@@ -13,4 +13,12 @@ public class BankAccountTest {
 		assertEquals(owner, account.getOwner());
 		assertEquals(balance, account.getBalance());
 	}
+
+	@Test
+	public void initializeUsingDefaultInitialBalance() throws Exception {
+		final String owner = "Pietro Martinelli";
+		final BankAccount account = new BankAccount(owner);
+		assertEquals(owner, account.getOwner());
+		assertEquals(Long.valueOf(0L), account.getBalance());
+	}
 }
