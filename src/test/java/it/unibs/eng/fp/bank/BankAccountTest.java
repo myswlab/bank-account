@@ -27,6 +27,13 @@ public class BankAccountTest {
 		assertAccount(account, OWNER, 2500L);
 	}
 
+	@Test
+	public void withrdawABitOfMoney() throws Exception {
+		final BankAccount account = new BankAccount(OWNER, 1500L);
+		account.withdraw(1000L);
+		assertAccount(account, OWNER, 500L);
+	}
+
 	private void assertAccount(BankAccount account, String owner, Long balance) {
 		assertEquals(owner, account.getOwner());
 		assertEquals(balance, account.getBalance());
