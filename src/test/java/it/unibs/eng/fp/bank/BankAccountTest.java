@@ -20,6 +20,14 @@ public class BankAccountTest {
 		assertAccount(account, owner, 0L);
 	}
 
+	@Test
+	public void depositABitOfMoney() throws Exception {
+		final String owner = "Pietro Martinelli";
+		final BankAccount account = new BankAccount(owner, 1500L);
+		account.deposit(1000L);
+		assertAccount(account, owner, 2500L);
+	}
+
 	private void assertAccount(BankAccount account, String owner, Long balance) {
 		assertEquals(owner, account.getOwner());
 		assertEquals(balance, account.getBalance());

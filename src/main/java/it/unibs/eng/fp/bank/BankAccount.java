@@ -20,4 +20,8 @@ public class BankAccount {
 	public Long getBalance() {
 		return balance;
 	}
+
+	public void deposit(Long amount) {
+		balance += amount;
+	}
 }
